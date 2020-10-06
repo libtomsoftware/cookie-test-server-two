@@ -1,1 +1,1 @@
-# cookie-test-server-two
+# ebanking-cookie-test-server
