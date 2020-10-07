@@ -9,6 +9,7 @@ module.exports = function routes() {
 
   routes.get("/healthcheck", healthcheck.get);
   routes.get("/", function (req, res) {
+    res.headers = { ...res.headers, ...{ "X-Frame-Options": "Allow" } };
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
   routes.all("*", (req, res) => responder.rejectNotFound(res));
